@@ -5,11 +5,11 @@ export const Background = styled.div `
   height: 100%;
   min-width: 100%;
   max-height: 100%;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(45deg,#314270,#ca3437);
+  /* background: linear-gradient(45deg,#314270,#ca3437); */
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -30,29 +30,38 @@ export const Background = styled.div `
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
+
+  p {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ddd;
+  }
 `;
 
 export const Button = styled.button `
   margin: 15px;
-  -ms-flex: 0 0 33.333333%;
-  flex: 0 0 33.333333%;
-  max-width: 33.333333%;
+  -ms-flex: 0 0 22.%;
+  flex: 0 0 22.%;
+  max-width: 22.%;
   position: flex;
   align-items: center;
   justify-content: center;
   justify-items: center;
   align-content: center;
-  padding: 15px;
-  background-color: #dddd;
+  padding: 15px 5px;
+  background-color: #ddd;
   border-radius: 5px;
   outline: none;
   border: none;
   flex-direction: column;
 
   img{
-    width: 20%;
+    width: 10%;
     display: block;
-    padding: 0 20px;
+    padding: 0 15px;
   }
 `;
 
@@ -61,14 +70,13 @@ export const Satisfacao = styled.div `
   height: 100%;
   min-width: 100%;
   max-height: 100%;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background-color: rgba(49,66,112, 0.5);
-  box-shadow: 0 0 2px rgba(49,66,112,.5);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(49,66,112);
   z-index: 300;
   justify-content: center;
   align-content: center;
@@ -79,6 +87,7 @@ export const Satisfacao = styled.div `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   overflow-y: scroll;
+  transition: .6s;
 
   * {
     font-weight: bold;
@@ -89,9 +98,19 @@ export const Satisfacao = styled.div `
     justify-items: center;
     display: flex;
     flex-direction: column;
+    transition: .6s;
+    visibility: visible;
+    opacity: 1;
+    height: auto; opacity: 1;
+    transition: height 0ms 0ms, opacity 600ms 0ms;
 
     img {
       width: 20%;
+    }
+
+    .stars {
+      width: 20%;
+      filter: drop-shadow(0 0 4px #333);
     }
   }
 `;
